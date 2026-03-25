@@ -110,3 +110,17 @@
     transform: translateY(0);
   }
 }
+
+/* --- Hide Blink Watermark --- */
+div[class*="blink-badge"],
+div[id*="blink-badge"],
+[aria-label="Made with Blink"],
+iframe[src*="blink.new"],
+.fixed.bottom-4.right-4.flex.items-center /* tailwind class commonly used for it */
+{
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+}
