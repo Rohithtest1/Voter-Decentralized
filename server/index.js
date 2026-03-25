@@ -36,6 +36,20 @@ export const sessionStore = new Map()
 app.use('/auth', authRouter)
 app.use('/session', sessionRouter)
 
+app.get('/', (_req, res) => {
+  res.send(`
+    <html>
+      <body style="font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; background: #0f172a; color: #fff; margin: 0;">
+        <div style="text-align: center;">
+          <h1 style="color: #3b82f6;">🔐 VoteChain Auth Server</h1>
+          <p style="color: #94a3b8;">Status: <strong>Online & Active</strong></p>
+          <p style="font-size: 0.9em; opacity: 0.8;">WebSocket and WebAuthn endpoints are ready to accept connections.</p>
+        </div>
+      </body>
+    </html>
+  `)
+})
+
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
